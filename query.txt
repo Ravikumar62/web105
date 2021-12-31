@@ -1,0 +1,50 @@
+CREATE TABLE Student (
+    ID int NOT NULL,
+    Name varchar(10) NOT NULL,
+    IsActive BOOLEAN NOT NULL,
+    WorkingDate DATE() NOT NULL,
+	IsPresentOrAbsent BOOLEAN NOT NULL
+	);
+
+===============
+CREATE TABLE STUDENT (
+    ID int NOT NULL,
+    Name varchar(10) NOT NULL,
+    IsActive BIT NOT NULL,
+    WorkingDate DATETIME DEFAULT GETDATE(),
+	IsPresentOrAbsent BIT NOT NULL
+	);
+========================
+CREATE TABLE STUDENT3 (
+    ID int PRIMARY KEY,
+    Name VARCHAR(10) NOT NULL,
+    IsActive BIT NOT NULL,
+    WorkingDate DATETIME,
+	IsPresentOrAbsent BIT NOT NULL
+	);
+===============
+CREATE PROCEDURE rep_StudentPresentOrAbsent 
+@ID int,
+@Name varchar(10),
+ @IsActive BIT(1),
+ @WorkingDate DATE(),
+ @IsPresentOrAbsent BIT(1),
+ AS
+ 	IF ID = 0 THEN
+		INSERT INTO STUDENT1 (ID,Name,IsActive,WorkingDate,IsPresentOrAbsent)
+	VALUES(62,'Ravi',' ',' ','');
+	ELSE
+		UPDATE AccountMaster SET 
+			AccountName = I_AccountName,
+			AccountDescription = I_AccountDescription,
+			AccountOwnerName = I_AccountOwnerName,
+			BusinessUnit = I_BusinessUnitID,
+			`Status` = I_AccountsStatus,
+			CreatedBy = I_AmperUserID,
+			LastUpdatedOn = NOW(),
+			LastUpdatedBy = I_AmperUserID
+        WHERE 
+			AccountID = I_AccountID;
+==================
+INSERT INTO STUDENT1 (ID,Name,IsActive,WorkingDate,IsPresentOrAbsent)
+	VALUES(62,'Ravi',' ',' ','');
